@@ -1,2 +1,2 @@
-#Exercises of Python
+Exercises of Python
 
