@@ -24,7 +24,7 @@ def faz_calculos(path):
 def guarda_resultados(dic_info):
     with open("analisa_pasta.csv", "w", newline="") as file:
         writer = csv.writer(file)
-        file.write("extensao, volume, quantidade")
+        file.write("extensao, volume, quantidade\n")
         for key, value in dic_info.items():
             writer.writerow([key, dic_info[key]["volume"], dic_info[key]["quantidade"]])
        # file_syntax = ["extensao", "volume", "quantidade"]
