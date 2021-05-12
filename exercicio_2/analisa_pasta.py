@@ -1,5 +1,6 @@
 import os
 import csv
+from matplotlib import pyplot as plt
 
 def pede_pasta():
     nome = input("Insira um caminho para a pasta: ")
@@ -9,6 +10,9 @@ def faz_calculos(path):
     dic_info = {}
     # iterate every file in that directory
     for filename in os.listdir(path):
+        # if filename is a folder continues
+        if filename is not os.path.isfile(path):
+            continue
         dic_key = filename.split(".")[1]
         # if key exists, add info 
         if dic_info.__contains__(dic_key):
@@ -27,15 +31,15 @@ def guarda_resultados(dic_info):
         file.write("extensao, volume, quantidade\n")
         for key, value in dic_info.items():
             writer.writerow([key, dic_info[key]["volume"], dic_info[key]["quantidade"]])
-       # file_syntax = ["extensao", "volume", "quantidade"]
-       # writer = csv.DictWriter(file, fieldnames=file_syntax)
-       # writer.writeheader()
-       # for info in dic_info:
-           # key = get_key(dic_info, dic_info[info])
-           # writer.writerow(key)
-           # writer.writerow(dic_info[info])
 
-if __name__ == "__main__":
-    path = pede_pasta()
-    calculos = faz_calculos(path)
-    guarda_resultados(calculos)
+def faz_grafico_queijos(title, key_list, values_volume_list, values_quantidade_list):
+    plt.pie(key_list, labels=values_volume_list, autopct="%1.0f%%")
+    plt.pie(key_list, labels=values_quantidade_list, autopct="%1.0f%%")
+    plt.title(title)
+    plt.show
+
+def faz_grafico_barras(title, key_list, values_volume_list, values_quantidade_list):
+    plt.bar(key_list, values_volume_list)
+    plt.bar(key_list, values_quantidade_list)
+    plt.title(title)
+    plt.show
