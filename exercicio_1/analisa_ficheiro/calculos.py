@@ -24,8 +24,4 @@ def calcula_ocorrencia_letras(name_file):
     sort_dict = sorted(dictionary.items()) 
     print(dictionary)
 
-if __name__ == "__main__":
-    calcula_linhas("/home/rclj/Documents/python/pw-python/exercicio_1/analisa_ficheiro/test.txt")
-    calcula_carateres("/home/rclj/Documents/python/pw-python/exercicio_1/analisa_ficheiro/test.txt")
-    calcula_ocorrencia_letras("/home/rclj/Documents/python/pw-python/exercicio_1/analisa_ficheiro/test.txt")
 

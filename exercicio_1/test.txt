@@ -1,0 +1,3 @@
+JSON (JavaScript Object Notation) é um formato de dados popular para representar
+dados estruturados. Será usado no primeiro exercício desta ficha.
+

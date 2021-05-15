@@ -14,7 +14,7 @@ def main():
 
 def get_keys(dic):
     key_list = []
-    for key in dic.items():
+    for key, value in dic.items():
         key_list.append(key)
     return key_list
 

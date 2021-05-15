@@ -1,3 +1,4 @@
+# coding=utf-8
 import os
 import json
 
@@ -5,8 +6,7 @@ def pede_nome():
     while 1:
         path = os.getcwd()
         nome = input("Qual é o nome do ficheiro? ")
-        #print(path + "\\" + "analisa_ficheiro" + "\\" + nome)
-        if os.path.isfile(path + "\\" + "analisa_ficheiro" + "\\" + nome):
+        if os.path.isfile(os.path.join(path, nome)):
             return nome
 
 def gera_nome():

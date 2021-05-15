@@ -11,7 +11,7 @@ def faz_calculos(path):
     # iterate every file in that directory
     for filename in os.listdir(path):
         # if filename is a folder continues
-        if filename is not os.path.isfile(path):
+        if not os.path.isfile(os.path.join(path, filename)):
             continue
         dic_key = filename.split(".")[1]
         # if key exists, add info 
@@ -42,4 +42,8 @@ def faz_grafico_barras(title, key_list, values_volume_list, values_quantidade_li
     plt.bar(key_list, values_volume_list)
     plt.bar(key_list, values_quantidade_list)
     plt.title(title)
+    print(key_list)
+    print(values_volume_list)
+    print(values_quantidade_list)
+    print(title)
     plt.show
